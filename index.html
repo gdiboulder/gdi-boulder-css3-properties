@@ -47,15 +47,16 @@
             <section>
               <h2>Welcome!</h2>
               <h4 class="blue">Wifi Info</h4>
-              <p><strong>Network:</strong> SGGuest</p>
-              <p><strong>Password:</strong> GridSend0909 </p><br/>
+              <p><strong>Network:</strong> galvanize guest</p>
+              <p><strong>Password:</strong> login with your email or facebook account. </p><br/>
               <h3>Download workshop files</h3>
-              <p>If you have not already downloaded the files for this workshop - please download them at <a href="http://gdiboulder.com/advanced-css1" target="blank">gdiboulder.com/advanced-css1</a></p>
-              <p>Slides are available at <a href="http://materials.gdiboulder.com">materials.gdiboulder.com</a>. Click on "Advanced CSS Tips &amp; Techniques".</p>
+              <p>If you have not already downloaded the files for this workshop - please download them at <a href="http://gdiboulder.com/css-properties" target="blank">gdiboulder.com/css-properties</a></p>
+              <p>Slides are available at <a href="http://materials.gdiboulder.com" target="blank">materials.gdiboulder.com</a>. Click on "CSS Properties &amp; Selectors".</p>
+              <p>Digital copy of the <a href="https://docs.google.com/document/d/1zeIbUlnuCJi4HUVToNZ6S-dyTzf6X0gHX6XP5aLmS5k/edit?usp=sharing" target="blank">Selectors Cheat Sheet</a>.</p>
             </section>
             <section>
                 <h2>Thanks to our sponsor:</h2>
-                <img src="images/sponsors/sendgrid.jpg" style="border:none; width: 400px;"/>
+                <img src="images/sponsors/galvanize.jpg" style="border:none; width: 400px;"/>
             </section>
             <section>
                 <h2>Meet your instructor: Cara Jo Miller</h2>
@@ -122,7 +123,59 @@ li        { color: magenta; }
 <li style="font-weight: bold; color: red;">Item 2</li>
 <li style="font-weight: bold; color: magenta;">Item 3</li>
 </ul>
+<p>Open <a href="examples/basic-selectors.html" target="blank">basic-selectors.html</a> in your browser.</p>
+<p>Modify the CSS to see how Specificity works.</p>
             </section>
+                <section>
+      <h2>CSS Specificity</h2>
+      <p>Specificity is the means by which a browser decides which property values are the most relevant to an element and gets to be applied. Specificity is only based on the matching rules which are composed of selectors of different sorts.</p>
+      <p>In case of specificity equality, the latest declaration found in the CSS is applied to the element.</p> 
+    </section>
+    <section>
+      <h2>Say you have this:</h2>
+<pre><code class="css">
+.favorite {
+   color: red;
+}
+.favorite {
+   color: black;
+}</code></pre>
+<p>The color will be black because it comes last in the cascade</p>
+    </section>
+    <section>
+      <h2>Later on we declare this</h2>
+<pre><code class="css">
+ul#summer-drinks li.favorite {
+  color: green;
+  font-weight: bold;
+}</code></pre>
+<p>The color will now be green, because this is more specific that the previous declaration.</p>
+    </section>
+    <section>
+      <h2>Finally we get really specific</h2>
+<pre><code class="css">html body div#pagewrap ul#summer-drinks li.favorite {
+  color: magenta;
+  font-weight: bold;
+}</code></pre>    
+<p>The color will now be magenta, because this is the most specific of them all.</p>  
+    </section>
+    <section>
+      <h2>But what if it's important?</h2>
+<pre><code class="css">
+.favorite {
+  color: orange !important;
+  font-weight: bold !important;
+}</code></pre>
+<p>The <code>!important</code> declaration is like a ninja and will force itself over all other declarations.</p>
+<p><strong>This should be used sparingly</strong></p>      
+    </section>
+    <section>
+      <h2>CSS Specificity Resources</h2>
+      <p><a href="http://www.standardista.com/wp-content/uploads/2012/01/specifishity1.pdf">An illustrated SpeciFISHity chart</a></p>
+      <p><a href="http://cssspecificity.com/">Another illustrated chart</a></p>
+      <p><a href="http://css-tricks.com/specifics-on-css-specificity/">CSS Tricks: Specifics on CSS Specificity</a></p>
+      <p><a href="http://specificity.keegan.st/">Specificity Calculator</a></p>
+    </section>
             <section data-background="#f05b62">
                 <h2 style="color: #fafafa;">Let's talk about Selectors!</h2>
             </section>
@@ -154,7 +207,7 @@ E[attribute|=value] E[attribute$=value]   :empty                :optional
                 <p>Descendant selector matches nested <code>&lt;li></code>s</p>
                 <h5><strong><code>ol > li</code></strong></h5>
                 <p>Child selector matches <code>&lt;li></code>s in <code>&lt;ol></code> but not nested <code>&lt;ul></code></p>
-                <h5><strong><code>i.hasaclass + li</code></strong></h5>
+                <h5><strong><code>li.hasaclass + li</code></strong></h5>
                 <p>Adjacent sibling</p>
                 <h5><strong><code>li.hasaclass ~ li</code></strong></h5>
                 <p>general sibling selector matches later siblings, but not nested.</p>
@@ -180,16 +233,39 @@ form [type] {}
               <h3>Older Attribute Selectors</h3>
               <p><strong><code>E[attr]</code></strong></p>
               <p>Element E that has the attribute attr with any value.</p>
+<pre><code class="css">
+a[href] {
+  background: pink;
+} 
+/* Styles all links with the attribute 'href' */
+</code></pre>
               <p><strong><code>E[attr="val"]</code></strong></p>
               <p>Element E that has the attribute attr with the exact, case-sensitive if attribute is case sensitive, value val.</p>
+<pre><code class="css">
+a[href="http://girldevelopit.com"] {
+  background: magenta; font-weight: bold;
+} 
+/* Styles all links to http://girldevelopit.com */
+</code></pre>
+            </section>
+            <section>
+              <h3>Older Attribute Selectors</h3>
               <p><strong><code>E[attr|=val]</code></strong></p>
               <p>Element E whose attribute attr has a value val or begins with val- ("val" plus "-").</p>
 <pre><code class="css">
-p[lang|="en"]{} &lt;p lang="en-us"> OR &lt;p lang="en-uk">
+p[lang|="en"] 
+  {background: url(icon-flag.png);
+} 
+/* Syles elements &lt;p lang="en-us"> OR &lt;p lang="en-uk"> */
 </code></pre>
               <p><strong><code>E[attr~=val]</code></strong>
               <p>Element E whose attribute attr has within its value the space-separated full word val.</p>
-<pre><code class="css">a[title~=more] {} &lt;a title="want more info about this?"></code></pre>
+<pre><code class="css">
+a[title~=more] {
+  color: orange;
+} 
+/* Styles links that have a title that contain 'more' 
+surrounded by spaces. &lt;a title="want more info about this?"> */</code></pre>
             </section>
             <section>
               <h3>CSS3 Attribute Selectors</h3>
@@ -233,7 +309,7 @@ abbr[title*=unicorn] {}       E:[att*=val]
             </section>
             <section>
               <h3>Using Attribute Selectors</h3>
-              <p>Open <a href="examples/attribute-selectors.html">attribute-selectors.html</a> in your web browser.</p>
+              <p>Open <a href="examples/attribute-selectors.html" target="blank">attribute-selectors.html</a> in your web browser.</p>
               <p>Change the CSS and see what happens.</p>
             </section>
             <section>
@@ -270,7 +346,7 @@ input:in-range { background-color:lightgreen;}
             </section>
             <section>
               <h2>Using UI Selectors</h2>
-              <p>Open <a href="examples/ui-selectors.html">ui-selectors.html</a> in your web browser.</p>
+              <p>Open <a href="examples/ui-selectors.html" target="blank">ui-selectors.html</a> in your web browser.</p>
               <p>Change the CSS and click the checkboxes to see how the form UI changes.</p>
             </section>
             <section>
@@ -290,7 +366,7 @@ input:in-range { background-color:lightgreen;}
    </section>
    <section>
      <h2>Using Structural Selectors</h2>
-     <p>Open <a href="examples/structural-selectors.html">examples/structural-selectors.html</a> in your browser.</p>
+     <p>Open <a href="examples/structural-selectors.html" target="blank">structural-selectors.html</a> in your browser.</p>
      <p>Experiment with targetting different element on the page with Structural Selectors.</p> 
    </section>
    <section>
@@ -346,12 +422,12 @@ li:nth-of-type(3n-1) {
     </section>
     <section>
       <h2>Use nth-child</h2>
-      <p>Open <a href="examples/nth-child-selectors.html">nth-child-selectors.html</a> in your browser.</p>
+      <p>Open <a href="examples/nth-child-selectors.html" target="blank">nth-child-selectors.html</a> in your browser.</p>
       <p>Change the values of the nth-child to see what cells change colors</p>
     </section>
     <section>
       <h2>Go crazy!</h2>
-      <p>Open <a href="examples/css-flag.html">flag.html</a> and see how crazy you can get with nth-child selectors.</p>
+      <p>Open <a href="examples/css-flag.html" target="blank">flag.html</a> and see how crazy you can get with nth-child selectors.</p>
     </section>
     <section>
       <h2>Misc. Pseudo Classes</h2>
@@ -372,21 +448,11 @@ li:nth-of-type(3n-1) {
     </section>
     <section>
       <h2>Using the :not selector</h2>
-      <p>Open <a href="examples/not-selector.html">not-selector.html</a> in your browser</p>
+      <p>The <code>:not</code> selector creates an argument using a simple selector and then matches elements on the page that do <strong>not</strong> match that element.</p> 
+      <p>Open <a href="examples/not-selector.html" target="blank">not-selector.html</a> in your browser</p>
       <p>Try using our previous selectors to styles things (or not!).</p>
     </section>
-    <section>
-      <h2>CSS Specificity</h2>
-      <p>Specificity is the means by which a browser decides which property values are the most relevant to an element and gets to be applied. Specificity is only based on the matching rules which are composed of selectors of different sorts.</p>
-      <p>In case of specificity equality, the latest declaration found in the CSS is applied to the element.</p> 
-    </section>
-    <section>
-      <h2>CSS Specificity Resources</h2>
-      <p><a href="http://www.standardista.com/wp-content/uploads/2012/01/specifishity1.pdf">An illustrated SpeciFISHity chart</a></p>
-      <p><a href="http://cssspecificity.com/">Another illustrated chart</a></p>
-      <p><a href="http://css-tricks.com/specifics-on-css-specificity/">CSS Tricks: Specifics on CSS Specificity</a></p>
-      <p><a href="http://specificity.keegan.st/">Specificity Calculator</a></p>
-    </section>
+
     <section>
       <h2>Pseudo Elements</h2>
       <p><strong>Pseudo classes</strong> select elements that already exist</p>
@@ -438,7 +504,7 @@ p:first-of-type::first-letter {
   border-style:solid;
   border-color:#fff transparent;
 }</code></pre>
-<p>Open <a href="examples/after-before.html">after-before.html</a> to see this in action.</p>
+<p>Open <a href="examples/after-before.html" target="blank">after-before.html</a> to see this in action.</p>
     </section>
     <section>
       <h2>Icon fonts use ::before</h2>
@@ -453,11 +519,11 @@ p:first-of-type::first-letter {
 .icon-heart:before {
   content: "\f004";
 }</code></pre>
-<p><i>::beore and :before are interchangable.</i></p>
+<p><i>::beore and :before are often interchangable.</i></p>
     </section>
-    <section>
-      <h2>Properties</h2>
-    </section>
+    <section data-background="#f05b62">
+                <h2 style="color: #fafafa;">Properties</h2>
+            </section>
     <section>
       <h2>Vendor Prefixes</h2>
       <p>Don't forget, when using fancy CSS3 properties you need to add the vendor prefixes so all browsers can play.</p>
@@ -578,7 +644,7 @@ div {
             </script>
     </section>
     <section>
-      <h2>Hue/Saturation/Luminance</h2>
+      <h2>Hue Saturation Luminance</h2>
           <style>
             #hsl-example {
               font-size: 75px;
@@ -909,6 +975,22 @@ div {
           <div id="animation-example" class="example">
             Pulse!
           </div>
+</section>
+<section>
+  <h2>That's it!</h2>
+  <p>Use your new powers for good! </p>
+</section>
+<section>
+  <h2>Upcoming Events</h2>
+  <h4><strong>Intro to Command Line</strong></h4>
+  <p>October 15th. 6p - 8p</p>
+  <p>Galvanize - Boulder</p><br/>
+  <h4><strong>Code &amp; Coffee</strong></h4>
+  <p>October 18th. 10a - 1p</p>
+  <p>Amante Coffee Baseline - Boulder</p><br/>
+  <h4><strong>Intro to Programming with Ruby</strong></h4>
+  <p>October 25th. 9a-5:30p</p>
+  <p>Turing School - Denver</p>
 </section>
         </div>
         <footer>
