@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<!-- saved from url=(0077)https://dl.dropboxusercontent.com/u/10998095/css3-workshop/files/05_flag.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta charset="utf-8">
+
+
+<style>
+head, style {display: block;}
+[contenteditable] {-webkit-user-modify: read-write-plaintext-only;}
+style:first-of-type {visibility:hidden;}
+style:last-of-type {padding: 20px; font-size: 1.5em; white-space: pre; font-family: monospace; white-space:pre; border-radius: 10px; border: 3px solid #aaa; background-color:#dedede; margin: 20px auto; width: 80%; font-family:"Courier New", Courier, monospace;}
+:root {background-color:#ccc; 
+  background-image:url(../css/page-bg.jpg);}
+td{font-family:Verdana, Geneva, sans-serif; padding:3px 5px;}
+div {background-color: #ededed; padding:10px; margin:10px;}
+table {background-color: white;}</style>
+
+<style contenteditable="">
+td {color: #fff; background-color: #fff;}
+tr:nth-of-type(odd) td:nth-of-type(8) ~ td,
+tr:nth-of-type(2n+9) td {
+	background-color: #900; color: #900;
+}
+tr:nth-last-of-type(n+7) td:nth-last-of-type(n+9) {
+	background-color: #009; 
+	font-size: 0;
+	color: #009;
+}
+tr:nth-last-of-type(n+7) td:nth-last-of-type(n+9):after {
+	content: '☆';
+	font-size: 15px;
+	color: white;	
+}
+tr:nth-last-of-type(2n+1) td:after {
+	position: relative; left: 14px;
+}
+	}
+	</style>
+<title>CSS UI Selector</title>
+</head>
+
+<body>
+<table border="0" cellpadding="0" cellspacing="0" id="flag">
+<tbody><tr><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td></tr>
+<tr><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td></tr>
+<tr><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td></tr>
+<tr><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td></tr>
+<tr><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td></tr>
+<tr><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td></tr>
+<tr><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td></tr>
+<tr><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td></tr>
+<tr><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td></tr>
+<tr><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td></tr>
+<tr><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td></tr>
+<tr><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td></tr>
+<tr><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td></tr>
+</tbody></table>
+
+
+<p style="height:100px"></p>
+
+<table border="0" cellpadding="0" cellspacing="0" id="flag">
+<tbody><tr><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td></tr>
+<tr><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td></tr>
+<tr><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td></tr>
+<tr><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td></tr>
+<tr><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td></tr>
+<tr><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td></tr>
+<tr><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td></tr>
+<tr><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td></tr>
+<tr><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td></tr>
+<tr><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td></tr>
+<tr><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td></tr>
+<tr><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td></tr>
+<tr><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td><td>cell</td></tr>
+</tbody></table>
+
+
+
+<div id="window-resizer-tooltip"><a href="https://dl.dropboxusercontent.com/u/10998095/css3-workshop/files/05_flag.html#" title="Edit settings" style="background-image: url(chrome-extension://kkelicaakdanhinjdeammmilcgefonfh/images/icon_19.png);"></a><span class="tooltipTitle">Window size: </span><span class="tooltipWidth" id="winWidth"></span> x <span class="tooltipHeight" id="winHeight"></span><br><span class="tooltipTitle">Viewport size: </span><span class="tooltipWidth" id="vpWidth"></span> x <span class="tooltipHeight" id="vpHeight"></span></div></body></html>

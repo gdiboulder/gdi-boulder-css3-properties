@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<!-- saved from url=(0080)https://dl.dropboxusercontent.com/u/10998095/css3-workshop/files/009_bubble.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<style>
+head, style {display: block;}
+[contenteditable] {-webkit-user-modify: read-write-plaintext-only;}
+style:first-of-type {visibility:hidden;}
+style:last-of-type {padding: 20px; font-size: .8em; white-space: pre; font-family: monospace; white-space:pre; border-radius: 10px; border: 3px solid #aaa; background-color:#dedede; margin: 20px auto; width: 80%; font-family:"Courier New", Courier, monospace;}
+:root {background-color:#ccc; 
+  background-image:url(../css/page-bg.jpg);}
+
+</style>
+
+<style contenteditable="">.triangle-border {
+  position:relative;
+  padding:15px;
+  margin:1em 0 3em;
+  border:5px solid #5a8f00;
+  color:#333;
+  background:#fff;
+}
+.triangle-border::before {
+  content:"";
+  position:absolute;
+  bottom:-20px;
+  left:40px;
+  border-width:20px 20px 0;
+  border-style:solid;
+  border-color:#5a8f00 transparent;
+}
+.triangle-border::after {
+  content:"";
+  position:absolute;
+  bottom:-13px;
+  left:47px;
+  border-width:13px 13px 0;
+  border-style:solid;
+  border-color:#fff transparent;
+}
+</style>
+<title>CSS Selector Test</title>
+</head>
+
+<body>
+    <div class="triangle-border">I'm in a bubble!</div>
+
+
+
+<div id="window-resizer-tooltip"><a href="https://dl.dropboxusercontent.com/u/10998095/css3-workshop/files/009_bubble.html#" title="Edit settings" style="background-image: url(chrome-extension://kkelicaakdanhinjdeammmilcgefonfh/images/icon_19.png);"></a><span class="tooltipTitle">Window size: </span><span class="tooltipWidth" id="winWidth"></span> x <span class="tooltipHeight" id="winHeight"></span><br><span class="tooltipTitle">Viewport size: </span><span class="tooltipWidth" id="vpWidth"></span> x <span class="tooltipHeight" id="vpHeight"></span></div></body></html>
